@@ -1,0 +1,14 @@
+==== main.cpp ====
+1. [Line #61, #62]
+*From*
+    reads, K, P, all_supermers, num_threads_per_block,
+    num_blocks_per_grid
+*To*
+    reads, K, P, all_supermers, num_blocks_per_grid, num_threads_per_block // update 1
+
+2. [Line #50, #55, #56, #58, #64, #69, #70, #77]
+Comment these lines to remove the cuda kernel run time measurement.
+
+==== gensupermer_cuda.cu ====
+1. [Line #128, #129]
+Add Cuda event and related calling before and after these two lines to measure the kernel function run time.
